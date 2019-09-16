@@ -582,3 +582,4 @@ class BulbDevice(Device):
                 state[self.DPS_2_STATE[key]]=status[self.DPS][key]
 
         return state
+

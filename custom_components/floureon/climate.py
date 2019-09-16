@@ -93,12 +93,12 @@ class TuyaClimateDevice(TuyaDevice, ClimateDevice):
     @property
     def hvac_mode(self):
         """Return current operation ie. heat, cool, idle."""
-        _LOGGER.error("TUYA STATE: %s", str(self.tuya.state()))
+        #_LOGGER.error("TUYA STATE: %s", str(self.tuya.state()))
         if not self.tuya.state():
             return HVAC_MODE_OFF
 
         mode = self.tuya.current_operation()
-        _LOGGER.error("TUYA OPERATION: %s", str(self.tuya.current_operation()))
+        #_LOGGER.error("TUYA OPERATION: %s", str(self.tuya.current_operation()))
         if mode is None:
             return HVAC_MODE_AUTO
 
@@ -137,14 +137,14 @@ class TuyaClimateDevice(TuyaDevice, ClimateDevice):
     @property
     def min_temp(self) -> float:
         """Return the minimum temperature."""
-        _LOGGER.info("MIN TEMP: %d", self.tuya.min_temp())
+        #_LOGGER.info("MIN TEMP: %d", self.tuya.min_temp())
         return convert_temperature(16, TEMP_CELSIUS,
                                    self.temperature_unit)
 
     @property
     def max_temp(self) -> float:
         """Return the maximum temperature."""
-        _LOGGER.error("MAX TEMP: %d", self.tuya.max_temp())
+        #_LOGGER.error("MAX TEMP: %d", self.tuya.max_temp())
         return convert_temperature(30, TEMP_CELSIUS,
                                    self.temperature_unit)
 
@@ -167,7 +167,7 @@ class TuyaClimateDevice(TuyaDevice, ClimateDevice):
 
     def _turn_off(self) -> None:
         """Turn thermostat off"""
-        _LOGGER.info("Turn off")
+        #_LOGGER.info("Turn off")
         self.tuya.turn_off()
         self._thermostat_current_mode = HVAC_MODE_OFF
         try:
@@ -177,7 +177,7 @@ class TuyaClimateDevice(TuyaDevice, ClimateDevice):
 
     def _turn_on(self) -> None:
         """Turn thermostat on"""
-        _LOGGER.info("Turn on")
+        #_LOGGER.info("Turn on")
         self.tuya.turn_on()
         self._thermostat_current_mode = HVAC_MODE_HEAT
         try:
@@ -194,3 +194,4 @@ class TuyaClimateDevice(TuyaDevice, ClimateDevice):
         if self.tuya.support_wind_speed():
             supports = supports | SUPPORT_FAN_MODE
         return supports
+

@@ -159,3 +159,4 @@ class TuyaDevice(Entity):
     def _update_callback(self):
         """Call update method."""
         self.async_schedule_update_ha_state(True)
+
