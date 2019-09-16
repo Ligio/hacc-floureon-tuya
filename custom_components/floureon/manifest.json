@@ -1,0 +1,8 @@
+{
+  "domain": "floureon",
+  "name": "Floureon Thermostat",
+  "documentation": "https://github.com/home-assistant/example-custom-config/",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": ["python-tuya", "tuyaha==0.0.2"]
+}

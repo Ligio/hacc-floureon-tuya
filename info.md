@@ -1,0 +1,1 @@
+Floureon thermostat custom component
