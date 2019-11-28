@@ -167,23 +167,11 @@ class TuyaClimateDevice(TuyaDevice, ClimateDevice):
 
     def _turn_off(self) -> None:
         """Turn thermostat off"""
-        #_LOGGER.info("Turn off")
         self.tuya.turn_off()
-        self._thermostat_current_mode = HVAC_MODE_OFF
-        try:
-            self.tuya.set_operation_mode(HA_STATE_TO_TUYA.get(HVAC_MODE_OFF))
-        except:
-            pass
 
     def _turn_on(self) -> None:
         """Turn thermostat on"""
-        #_LOGGER.info("Turn on")
         self.tuya.turn_on()
-        self._thermostat_current_mode = HVAC_MODE_HEAT
-        try:
-            self.tuya.set_operation_mode(HA_STATE_TO_TUYA.get(HVAC_MODE_HEAT))
-        except:
-            pass
 
     @property
     def supported_features(self):
