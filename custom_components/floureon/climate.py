@@ -138,7 +138,7 @@ class TuyaClimateDevice(TuyaDevice, ClimateDevice):
     def min_temp(self) -> float:
         """Return the minimum temperature."""
         #_LOGGER.info("MIN TEMP: %d", self.tuya.min_temp())
-        return convert_temperature(16, TEMP_CELSIUS,
+        return convert_temperature(15, TEMP_CELSIUS,
                                    self.temperature_unit)
 
     @property
