@@ -4,5 +4,5 @@
   "documentation": "https://github.com/home-assistant/example-custom-config/",
   "dependencies": [],
   "codeowners": [],
-  "requirements": ["pytuya==7.0.5", "tuyaha==0.0.4"]
+  "requirements": ["pytuya==7.0.6", "tuyaha==0.0.6"]
 }

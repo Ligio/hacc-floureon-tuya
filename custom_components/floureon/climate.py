@@ -1,6 +1,12 @@
 """Support for the Tuya climate devices."""
 import logging
-from homeassistant.components.climate import ENTITY_ID_FORMAT, ClimateDevice
+from homeassistant.components.climate import ENTITY_ID_FORMAT
+
+try:
+    from homeassistant.components.climate import ClimateEntity
+except ImportError:
+    from homeassistant.components.climate import ClimateDevice as ClimateEntity
+
 from homeassistant.components.climate.const import (
     HVAC_MODE_AUTO,
     HVAC_MODE_COOL,
@@ -56,7 +62,7 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
     add_entities(devices)
 
 
-class TuyaClimateDevice(TuyaDevice, ClimateDevice):
+class TuyaClimateDevice(TuyaDevice, ClimateEntity):
     """Tuya climate devices,include air conditioner,heater."""
 
     def __init__(self, tuya):
