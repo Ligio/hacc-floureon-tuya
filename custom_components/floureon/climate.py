@@ -19,7 +19,6 @@ from homeassistant.components.climate.const import (
 
 from homeassistant.util.temperature import convert as convert_temperature
 
-from homeassistant.components.fan import SPEED_HIGH, SPEED_LOW, SPEED_MEDIUM
 from homeassistant.const import (
     ATTR_TEMPERATURE,
     PRECISION_WHOLE,
@@ -43,8 +42,6 @@ HA_STATE_TO_TUYA = {
 }
 
 TUYA_STATE_TO_HA = {value: key for key, value in HA_STATE_TO_TUYA.items()}
-
-FAN_MODES = {SPEED_LOW, SPEED_MEDIUM, SPEED_HIGH}
 
 
 def setup_platform(hass, config, add_entities, discovery_info=None):
